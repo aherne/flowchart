@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>JavaScript Flow Chart</title>
+	<script type="text/javascript" src="src/CanvasContext.js"></script>
+	<script type="text/javascript" src="src/Drawer.js"></script>
+</head>
+<body>
+<canvas id="myCanvas" style="background-color:#DDDDDD"></canvas>
+</body>
+</html>
+<script>
+function delay(waitTimeTotal, waitTimeUnit, callback) {
+	waitTimeTotal += waitTimeUnit; 
+	setTimeout(function() {
+		callback();
+	}, waitTimeTotal);	
+	return waitTimeTotal;
+}
+
+let drawer = new Drawer([
+	["","","Project Static File", "STDERR MVC API", "Project Configuration", "Data Sources"],
+	["User Agent","Web Server","Project Bootstrap", "Throwable", "", ""],
+	["","","xxx", "STDOUT MVC API", "Project Code", "Other APIs"]
+], {
+	"rectangleWidth":150,
+	"rectangleHeight":50,
+	"arrowWidth":5,
+	"arrowHeight":10,
+	"lineWidth":50,
+	"lineHeight":25,
+	"fontFamily":"14px sans-serif",
+	"fontColor":"black"
+}, "myCanvas");
+drawer.rectangle("User Agent","#f5f5f5");
+drawer.lineRightLeft("User Agent", "Web Server", "black");
+drawer.rectangle("Web Server","#d5e8d4");
+drawer.lineRightLineLeft("Web Server", "Project Static File", "black");
+drawer.rectangle("Project Static File","#dae8fc");
+drawer.lineTopLineTop("Project Static File", "User Agent", "black");
+drawer.lineRightLineLeft("Web Server", "Project Bootstrap", "black");
+drawer.rectangle("Project Bootstrap","#dae8fc");
+drawer.lineRightLineLeft("Project Bootstrap", "STDERR MVC API", "black");
+drawer.rectangle("STDERR MVC API","#ffe6cc");
+drawer.lineRightLineLeft("Project Bootstrap", "STDOUT MVC API", "black");
+drawer.rectangle("STDOUT MVC API","#ffe6cc");
+drawer.lineRightLineLeft("STDOUT MVC API", "Project Configuration", "blue", 0.75, 0.75);
+delay(0, 2500, function() {
+	drawer.text("xxx", "blue");
+});
+drawer.rectangle("Project Configuration","#dae8fc");
+drawer.lineRightLeft("STDOUT MVC API", "Project Code", "blue", 0.75);
+drawer.rectangle("Project Code","#dae8fc");
+drawer.lineRightLeft("Project Code", "Other APIs", "blue", 0.75);
+drawer.rectangle("Other APIs","#ffe6cc");
+drawer.lineTopBottom("Other APIs", "Data Sources", "blue", 0.75);
+drawer.rectangle("Data Sources","#d5e8d4");
+drawer.lineBottomLineBottom("STDOUT MVC API", "User Agent", "black");
+drawer.lineTopLineRight("Other APIs", "Throwable", "green");
+drawer.lineTopLineRight("Project Code", "Throwable", "green");
+drawer.lineTopBottom("STDOUT MVC API", "Throwable", "green");
+drawer.rectangle("Throwable","#f2e6ff");
+drawer.lineTopBottom("Throwable", "STDERR MVC API", "green");
+drawer.lineRightLeft("STDERR MVC API", "Project Configuration", "red", 0.25);
+drawer.lineRightLineLeft("STDERR MVC API", "Project Code", "red", 0.25, 0.25);
+drawer.lineRightLeft("Project Code", "Other APIs", "red", 0.25);
+drawer.lineTopBottom("Other APIs", "Data Sources", "red", 0.25);
+drawer.lineTopLineTop("STDERR MVC API", "User Agent", "black");
+</script>
