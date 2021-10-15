@@ -15,6 +15,6 @@ class Positions
 		if (this.#positions.length == 0) {
 			throw "Flowchart: at least one row is mandatory";
 		}
-		return this.#data;
+		return this.#positions;
 	}
 }
