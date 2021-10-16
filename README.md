@@ -119,5 +119,5 @@ Arguments glossary:
 | offset | percentage | Offset on implicit axis horizontal/vertical EDGE must follow (0.5 = line is in the middle between the two VERTEX sides) |
 | offsetFrom | percentage | Offset polygonal EDGE will depart from (0.5 = departs from middle of source VERTEX side) |
 | offsetTo | percentage | Offset polygonal EDGE will arrive to (0.5 = departs from middle of destination VERTEX side) |
-| offsetX | percentage | Defines when polygonal EDGE goes up/down based on distance between the two VERTEX sides (0.5 = branches at the middle of distance  |
-| offsetY | percentage | Defines when polygonal EDGE goes left-right based on distance between the two VERTEX sides (0.5 = branches on the middle of distance |
+| offsetX | percentage | Defines when polygonal EDGE goes up/down based on distance between the two VERTEX sides (0.5 = branches at the middle of distance)  |
+| offsetY | percentage | Defines when polygonal EDGE goes left/right based on distance between the two VERTEX sides (0.5 = branches on the middle of distance) |
