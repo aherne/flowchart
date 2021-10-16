@@ -1,4 +1,4 @@
-class Configurer
+class FlowchartConfigurer
 {
 	#data = {};
 	

@@ -1,4 +1,4 @@
-class CanvasContext
+class FlowchartCanvas
 {
 	#config;
 

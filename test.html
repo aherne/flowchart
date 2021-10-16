@@ -8,28 +8,18 @@
 </body>
 </html>
 <script>
-function delay(waitTimeTotal, waitTimeUnit, callback) {
-	waitTimeTotal += waitTimeUnit; 
-	setTimeout(function() {
-		callback();
-	}, waitTimeTotal);	
-	return waitTimeTotal;
-}
+let configurer = new FlowchartConfigurer();
+configurer.setRectangleSizes(150, 50);
+configurer.setArrowSizes(5, 10);
+configurer.setLineSizes(50, 25);
+configurer.setFontInfo("14px sans-serif", "black");
 
-let drawer = new Drawer([
-	["","","Project Static File", "STDERR MVC API", "Project Configuration", "Data Sources"],
-	["User Agent","Web Server","Project Bootstrap", "Throwable", "", ""],
-	["","","xxx", "STDOUT MVC API", "Project Code", "Other APIs"]
-], {
-	"rectangleWidth":150,
-	"rectangleHeight":50,
-	"arrowWidth":5,
-	"arrowHeight":10,
-	"lineWidth":50,
-	"lineHeight":25,
-	"fontFamily":"14px sans-serif",
-	"fontColor":"black"
-}, "myCanvas");
+let positions = new FlowchartPositions();
+positions.addRow(["","","Project Static File", "STDERR MVC API", "Project Configuration", "Data Sources"]);
+positions.addRow(["User Agent","Web Server","Project Bootstrap", "Throwable", "", ""]);
+positions.addRow(["","","test text", "STDOUT MVC API", "Project Code", "Other APIs"]);
+
+let drawer = new Flowchart(positions.getAll(), configurer.getAll(), "myCanvas");
 drawer.rectangle("User Agent","#f5f5f5");
 drawer.lineRightLeft("User Agent", "Web Server", "black");
 drawer.rectangle("Web Server","#d5e8d4");
@@ -43,9 +33,7 @@ drawer.rectangle("STDERR MVC API","#ffe6cc");
 drawer.lineRightLineLeft("Project Bootstrap", "STDOUT MVC API", "black");
 drawer.rectangle("STDOUT MVC API","#ffe6cc");
 drawer.lineRightLineLeft("STDOUT MVC API", "Project Configuration", "blue", 0.75, 0.75);
-delay(0, 2500, function() {
-	drawer.text("xxx", "blue");
-});
+drawer.text("test text", "blue");
 drawer.rectangle("Project Configuration","#dae8fc");
 drawer.lineRightLeft("STDOUT MVC API", "Project Code", "blue", 0.75);
 drawer.rectangle("Project Code","#dae8fc");

@@ -1,4 +1,4 @@
-class Drawer
+class Flowchart
 {
 	#elements = {};
 	#initialX = 5;
@@ -25,7 +25,7 @@ class Drawer
 		
 		let canvasWidth = this.#initialX*2+(positions[0].length*(config.rectangleWidth+config.lineWidth))-config.lineWidth;
 		let canvasHeight = initialY*2+(positions.length*(config.rectangleHeight+config.lineHeight))-config.lineHeight;
-		this.#context = new CanvasContext(canvasID, canvasWidth, canvasHeight, config);
+		this.#context = new FlowchartCanvas(canvasID, canvasWidth, canvasHeight, config);
 	}
 	
 	#lineHorizontalVerticalHorizontal(from, to, color, offsetFrom, offsetTo, offsetX, isLeftArrow, isLeftDirection)

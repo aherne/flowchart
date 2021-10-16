@@ -1,4 +1,4 @@
-class Positions
+class FlowchartPositions
 {
 	#positions = [];
 	
