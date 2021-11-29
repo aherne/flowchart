@@ -218,4 +218,9 @@ class Flowchart
 		let finalOffset = -(this.#elements[to].y>=this.#elements[from].y?this.#config.lineHeight*offsetY + (this.#elements[to].y-this.#elements[from].y):this.#config.lineHeight*offsetY);
 		this.#lineVerticalHorizontalVertical(from, to, color, offsetFrom, offsetTo, finalOffset, true, false)	
 	}
+	
+	getDriver()
+	{
+		return this.#context.getDriver();
+	}
 }

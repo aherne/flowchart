@@ -58,10 +58,10 @@ Class configures VERTEX and EDGE sizes as well as font info for VERTEX titles vi
 
 | Method | Arguments | Returns | Description |
 | --- | --- | --- | --- |
-| setRectangleSizes | int width, int height | void | Sets default size of all rectangle VERTEXes |
-| setArrowSizes | int width, int height | void | Sets default size of all EDGE arrow points |
-| setLineSizes | int width, int height | void | Sets horizontal (width) or vertical (height) size of all EDGE lines |
-| setFontInfo | string family, string color | void | Sets font family and font color info for VERTEX titles |
+| setRectangleSizes | int width, int height | - | Sets default size of all rectangle VERTEXes |
+| setArrowSizes | int width, int height | - | Sets default size of all EDGE arrow points |
+| setLineSizes | int width, int height | - | Sets horizontal (width) or vertical (height) size of all EDGE lines |
+| setFontInfo | string family, string color | - | Sets font family and font color info for VERTEX titles |
 | getAll | - | json | Gets all values set by methods above |
 
 ### FlowchartPositions
@@ -70,40 +70,41 @@ Class sets up VERTEX positions in table-like topology (where each VERTEX is iden
 
 | Method | Arguments | Returns | Description |
 | --- | --- | --- | --- |
-| addRow | string\[\] elements | void | Adds a line in table where each entry must be a string (VERTEX title or empty string) |
+| addRow | string\[\] elements | - | Adds a line in table where each entry must be a string (VERTEX title or empty string) |
 | getAll | - | json | Gets all values set by method above |
 
 All rows added must have same columns number! If opposite happens, an exception is thrown.
 
 ### Flowchart
 
-Class draws graph based on configuration and positions already set via following public methods
+Class draws graph based on configuration and positions already set via following public methods:
 
-| Method | Arguments | Description |
-| --- | --- | --- |
-| constructor | positions, config, canvasID | Sets up graph by json-ed [positions](#FlowchartPositions), [configuration](#FlowchartConfigurer) and id of canvas element to write into |
-| rectangle | title, color | Draws a VERTEX as a rectangle by its title |
-| text | title, color | Draws a VERTEX as a simple text by its title |
-| lineRightLeft | from, to, color, offset=0.5 | Draws line EDGE connecting right side of *from* VERTEX to left side of *to* VERTEX on same row |
-| lineLeftRight | from, to, color, offset=0.5 | Draws line EDGE connecting left side of *from* VERTEX to right side of *to* VERTEX on same row |
-| lineTopBottom | from, to, color, offset=0.5 | Draws line EDGE connecting top side of *from* VERTEX to bottom side of *to* VERTEX on same column |
-| lineBottomTop | from, to, color, offset=0.5 | Draws line EDGE connecting bottom side of *from* VERTEX to top side of *to* VERTEX on same column |
-| lineLeftLineLeft | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetX=0.5 | Draws three line EDGE connecting left side of *from* VERTEX to left side of *to* VERTEX |
-| lineLeftLineRight | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetX=0.5 | Draws three line EDGE connecting left side of *from* VERTEX to right side of *to* VERTEX |
-| lineLeftLineTop | from, to, color, offsetFrom=0.5, offsetTo=0.5 | Draws two line EDGE connecting left side of *from* VERTEX to top side of *to* VERTEX |
-| lineLeftLineBottom | from, to, color, offsetFrom=0.5, offsetTo=0.5 | Draws two line EDGE connecting left side of *from* VERTEX to bottom side of *to* VERTEX |
-| lineRightLineLeft | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetX=0.5 | Draws three line EDGE connecting right side of *from* VERTEX to left side of *to* VERTEX |
-| lineRightLineRight | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetX=0.5 | Draws three line EDGE connecting right side of *from* VERTEX to right side of *to* VERTEX |
-| lineRightLineTop | from, to, color, offsetFrom=0.5, offsetTo=0.5 | Draws two line EDGE connecting right side of *from* VERTEX to top side of *to* VERTEX |
-| lineRightLineBottom | from, to, color, offsetFrom=0.5, offsetTo=0.5 | Draws two line EDGE connecting right side of *from* VERTEX to bottom side of *to* VERTEX |
-| lineTopLineLeft | from, to, color, offsetFrom=0.5, offsetTo=0.5 | Draws two line EDGE connecting top side of *from* VERTEX to left side of *to* VERTEX |
-| lineTopLineRight | from, to, color, offsetFrom=0.5, offsetTo=0.5 | Draws two line EDGE connecting top side of *from* VERTEX to right side of *to* VERTEX |
-| lineTopLineTop | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetY=0.5 | Draws three line EDGE connecting top side of *from* VERTEX to top side of *to* VERTEX |
-| lineTopLineBottom | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetY=0.5 | Draws three line EDGE connecting top side of *from* VERTEX to bottom side of *to* VERTEX |
-| lineBottomLineLeft | from, to, color, offsetFrom=0.5, offsetTo=0.5 | Draws two line EDGE connecting bottom side of *from* VERTEX to left side of *to* VERTEX |
-| lineBottomLineRight | from, to, color, offsetFrom=0.5, offsetTo=0.5 | Draws two line EDGE connecting bottom side of *from* VERTEX to right side of *to* VERTEX |
-| lineBottomLineTop | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetY=0.5 | Draws three line EDGE connecting bottom side of *from* VERTEX to top side of *to* VERTEX |
-| lineBottomLineBottom | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetY=0.5 | Draws three line EDGE connecting bottom side of *from* VERTEX to bottom side of *to* VERTEX |
+| Method | Arguments | Returns | Description |
+| --- | --- | ---  | --- |
+| constructor | positions, config, canvasID | - | Sets up graph by json-ed [positions](#FlowchartPositions), [configuration](#FlowchartConfigurer) and id of canvas element to write into |
+| rectangle | title, color | - | Draws a VERTEX as a rectangle by its title |
+| text | title, color | - | Draws a VERTEX as a simple text by its title |
+| lineRightLeft | from, to, color, offset=0.5 | - | Draws line EDGE connecting right side of *from* VERTEX to left side of *to* VERTEX on same row |
+| lineLeftRight | from, to, color, offset=0.5 | - | Draws line EDGE connecting left side of *from* VERTEX to right side of *to* VERTEX on same row |
+| lineTopBottom | from, to, color, offset=0.5 | - | Draws line EDGE connecting top side of *from* VERTEX to bottom side of *to* VERTEX on same column |
+| lineBottomTop | from, to, color, offset=0.5 | - | Draws line EDGE connecting bottom side of *from* VERTEX to top side of *to* VERTEX on same column |
+| lineLeftLineLeft | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetX=0.5 | - | Draws three line EDGE connecting left side of *from* VERTEX to left side of *to* VERTEX |
+| lineLeftLineRight | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetX=0.5 | - | Draws three line EDGE connecting left side of *from* VERTEX to right side of *to* VERTEX |
+| lineLeftLineTop | from, to, color, offsetFrom=0.5, offsetTo=0.5 | - | Draws two line EDGE connecting left side of *from* VERTEX to top side of *to* VERTEX |
+| lineLeftLineBottom | from, to, color, offsetFrom=0.5, offsetTo=0.5 | - | Draws two line EDGE connecting left side of *from* VERTEX to bottom side of *to* VERTEX |
+| lineRightLineLeft | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetX=0.5 | - | Draws three line EDGE connecting right side of *from* VERTEX to left side of *to* VERTEX |
+| lineRightLineRight | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetX=0.5 | - | Draws three line EDGE connecting right side of *from* VERTEX to right side of *to* VERTEX |
+| lineRightLineTop | from, to, color, offsetFrom=0.5, offsetTo=0.5 | - | Draws two line EDGE connecting right side of *from* VERTEX to top side of *to* VERTEX |
+| lineRightLineBottom | from, to, color, offsetFrom=0.5, offsetTo=0.5 | - | Draws two line EDGE connecting right side of *from* VERTEX to bottom side of *to* VERTEX |
+| lineTopLineLeft | from, to, color, offsetFrom=0.5, offsetTo=0.5 | - | Draws two line EDGE connecting top side of *from* VERTEX to left side of *to* VERTEX |
+| lineTopLineRight | from, to, color, offsetFrom=0.5, offsetTo=0.5 | - | Draws two line EDGE connecting top side of *from* VERTEX to right side of *to* VERTEX |
+| lineTopLineTop | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetY=0.5 | - | Draws three line EDGE connecting top side of *from* VERTEX to top side of *to* VERTEX |
+| lineTopLineBottom | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetY=0.5 | - | Draws three line EDGE connecting top side of *from* VERTEX to bottom side of *to* VERTEX |
+| lineBottomLineLeft | from, to, color, offsetFrom=0.5, offsetTo=0.5 | - | Draws two line EDGE connecting bottom side of *from* VERTEX to left side of *to* VERTEX |
+| lineBottomLineRight | from, to, color, offsetFrom=0.5, offsetTo=0.5 | - | Draws two line EDGE connecting bottom side of *from* VERTEX to right side of *to* VERTEX |
+| lineBottomLineTop | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetY=0.5 | - | Draws three line EDGE connecting bottom side of *from* VERTEX to top side of *to* VERTEX |
+| lineBottomLineBottom | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetY=0.5 | - | Draws three line EDGE connecting bottom side of *from* VERTEX to bottom side of *to* VERTEX |
+| getDriver | - | [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D]) | Gets driver underneath to draw custom shapes at custom positions | 
 
 Arguments glossary:
 
