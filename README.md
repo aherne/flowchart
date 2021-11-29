@@ -104,7 +104,7 @@ Class draws graph based on configuration and positions already set via following
 | lineBottomLineRight | from, to, color, offsetFrom=0.5, offsetTo=0.5 | - | Draws two line EDGE connecting bottom side of *from* VERTEX to right side of *to* VERTEX |
 | lineBottomLineTop | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetY=0.5 | - | Draws three line EDGE connecting bottom side of *from* VERTEX to top side of *to* VERTEX |
 | lineBottomLineBottom | from, to, color, offsetFrom=0.5, offsetTo=0.5, offsetY=0.5 | - | Draws three line EDGE connecting bottom side of *from* VERTEX to bottom side of *to* VERTEX |
-| getDriver | - | [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D]) | Gets driver underneath to draw custom shapes at custom positions | 
+| getDriver | - | [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D) | Gets driver underneath to draw custom shapes at custom positions | 
 
 Arguments glossary:
 
